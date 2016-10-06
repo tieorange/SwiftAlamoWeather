@@ -49,10 +49,12 @@ class Forecast{
         // temp:
         if let temp = weatherDict["temp"] as? Dictionary<String, AnyObject> {
             if let min = temp["min"] as? Double{
-                self._lowTemp = "\(min  - 273.15)"
+               let lowTempRounded = roundDouble(digit: min  - 273.15)
+                self._lowTemp = "\(lowTempRounded)℃"
             }
             if let max = temp["max"] as? Double{
-                self._highTemp = "\(max  - 273.15)"
+                let highTempRounded = roundDouble(digit: max  - 273.15)
+                self._highTemp = "\(highTempRounded)℃"
             }
         }
         
@@ -68,6 +70,10 @@ class Forecast{
             
             self._date = unixConvertedDate.dayOfTheWeek()
         }
+    }
+    
+    func roundDouble(digit: Double) -> Int{
+        return Int(round(10*(digit)/10))
     }
     
     
