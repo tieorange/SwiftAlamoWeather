@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class WeatherVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var dateLabel: UILabel!
@@ -16,18 +17,42 @@ class WeatherVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
-    var currentWeather = CurrentWeather()
+    var currentWeather: CurrentWeather!
+    var forecast: Forecast!
+    var forecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        currentWeatherTypeLabel.text = "adf"
         tableView.delegate = self
         tableView.dataSource = self
+        
     
-        currentWeather.downloadWeatherDatails { 
+        currentWeather = CurrentWeather()
+        
+        currentWeather.downloadWeatherDatails {
+            self.updateFake()        }
+        
+    }
+    
+    func downloadForecastData(completed: DownloadComlete){
+        // Downloading data for TableView
+        let forecastURL = URL(string: FORECAST_URL)!
+        
+        Alamofire.request(forecastURL).responseJSON{ response in
+            let result = response.result
             
+            if let dict = result.value as? Dictionary<String, AnyObject>{
+                if let list = dict["list"] as? [Dictionary<String, AnyObject>]{
+                    for obj in list{
+                        let forecast = Forecast(weatherDict: obj)
+                        self.forecasts.append(forecast)
+                    }
+                }
+            }
         }
         
+        completed()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,5 +67,24 @@ class WeatherVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
         
         return cell
+    }
+    
+    func updateUI(){
+        dateLabel.text = self.currentWeather.date
+        temperatureLabel.text = "\(currentWeather.currentTemp)"
+        currentWeatherTypeLabel.text = self.currentWeather.weatherType
+        cityLabel.text = self.currentWeather.cityname
+        
+        currentWeatherImage.image = UIImage(named: self.currentWeather.weatherType)
+    }
+    
+    
+    func updateFake(){
+        dateLabel.text = self.currentWeather.date
+        temperatureLabel.text = "9"
+        currentWeatherTypeLabel.text = "Clouds"
+        cityLabel.text = "Warsaw"
+        
+        currentWeatherImage.image = #imageLiteral(resourceName: "Clouds")
     }
 }

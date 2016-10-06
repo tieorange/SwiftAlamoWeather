@@ -15,6 +15,7 @@
 		633377A31DA4461D0077FCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633377A11DA4461D0077FCF4 /* LaunchScreen.storyboard */; };
 		638277151DA59B7200B1F4F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638277141DA59B7200B1F4F9 /* Constants.swift */; };
 		638277171DA59E1200B1F4F9 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638277161DA59E1200B1F4F9 /* CurrentWeather.swift */; };
+		63E754491DA688F400AC2C8D /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E754481DA688F400AC2C8D /* Forecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		633377A41DA4461D0077FCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		638277141DA59B7200B1F4F9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		638277161DA59E1200B1F4F9 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		63E754481DA688F400AC2C8D /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		BADAA5F091C24FEDB5290157 /* Pods-AlamoWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamoWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamoWeather/Pods-AlamoWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				633377A41DA4461D0077FCF4 /* Info.plist */,
 				630E64191DA4559E00B59006 /* WeatherVC.swift */,
 				638277141DA59B7200B1F4F9 /* Constants.swift */,
+				63E754481DA688F400AC2C8D /* Forecast.swift */,
 				638277161DA59E1200B1F4F9 /* CurrentWeather.swift */,
 			);
 			path = AlamoWeather;
@@ -222,6 +225,7 @@
 				633377991DA4461D0077FCF4 /* AppDelegate.swift in Sources */,
 				638277171DA59E1200B1F4F9 /* CurrentWeather.swift in Sources */,
 				638277151DA59B7200B1F4F9 /* Constants.swift in Sources */,
+				63E754491DA688F400AC2C8D /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
