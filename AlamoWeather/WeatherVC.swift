@@ -31,28 +31,58 @@ class WeatherVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         currentWeather = CurrentWeather()
         
         currentWeather.downloadWeatherDatails {
-            self.updateFake()        }
-        
+            self.updateUI()
+        }
+    
+        self.downloadForecastData {
+            
+        }
     }
     
-    func downloadForecastData(completed: DownloadComlete){
+    func downloadForecastData2(completed: @escaping DownloadComlete) {
+        //Downloading forecast weather data for TableView
+        Alamofire.request(FORECAST_URL).responseJSON { response in
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                
+                if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
+                    
+                    for obj in list {
+                        let forecast = Forecast(weatherDict: obj)
+                        self.forecasts.append(forecast)
+                        print(obj)
+                    }
+                    self.forecasts.remove(at: 0)
+                    self.tableView.reloadData()
+                }
+            }
+            completed()
+        }
+    }
+    
+    
+    func downloadForecastData(completed: @escaping DownloadComlete){
         // Downloading data for TableView
         let forecastURL = URL(string: FORECAST_URL)!
         
         Alamofire.request(forecastURL).responseJSON{ response in
             let result = response.result
+            print("result = \(result)")
             
             if let dict = result.value as? Dictionary<String, AnyObject>{
                 if let list = dict["list"] as? [Dictionary<String, AnyObject>]{
                     for obj in list{
                         let forecast = Forecast(weatherDict: obj)
                         self.forecasts.append(forecast)
+                        print(obj)
                     }
                 }
             }
+            completed()
         }
         
-        completed()
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

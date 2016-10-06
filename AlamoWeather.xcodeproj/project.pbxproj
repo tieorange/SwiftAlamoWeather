@@ -13,6 +13,7 @@
 		6333779E1DA4461D0077FCF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333779C1DA4461D0077FCF4 /* Main.storyboard */; };
 		633377A01DA4461D0077FCF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6333779F1DA4461D0077FCF4 /* Assets.xcassets */; };
 		633377A31DA4461D0077FCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633377A11DA4461D0077FCF4 /* LaunchScreen.storyboard */; };
+		63503E581DA6BFD40039C78A /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63503E571DA6BFD40039C78A /* WeatherCell.swift */; };
 		638277151DA59B7200B1F4F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638277141DA59B7200B1F4F9 /* Constants.swift */; };
 		638277171DA59E1200B1F4F9 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638277161DA59E1200B1F4F9 /* CurrentWeather.swift */; };
 		63E754491DA688F400AC2C8D /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E754481DA688F400AC2C8D /* Forecast.swift */; };
@@ -28,6 +29,7 @@
 		6333779F1DA4461D0077FCF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		633377A21DA4461D0077FCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		633377A41DA4461D0077FCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63503E571DA6BFD40039C78A /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCell.swift; path = ../WeatherCell.swift; sourceTree = "<group>"; };
 		638277141DA59B7200B1F4F9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		638277161DA59E1200B1F4F9 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		63E754481DA688F400AC2C8D /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		633377971DA4461D0077FCF4 /* AlamoWeather */ = {
 			isa = PBXGroup;
 			children = (
+				63503E571DA6BFD40039C78A /* WeatherCell.swift */,
 				633377981DA4461D0077FCF4 /* AppDelegate.swift */,
 				6333779C1DA4461D0077FCF4 /* Main.storyboard */,
 				6333779F1DA4461D0077FCF4 /* Assets.xcassets */,
@@ -223,6 +226,7 @@
 			files = (
 				630E641A1DA4559E00B59006 /* WeatherVC.swift in Sources */,
 				633377991DA4461D0077FCF4 /* AppDelegate.swift in Sources */,
+				63503E581DA6BFD40039C78A /* WeatherCell.swift in Sources */,
 				638277171DA59E1200B1F4F9 /* CurrentWeather.swift in Sources */,
 				638277151DA59B7200B1F4F9 /* Constants.swift in Sources */,
 				63E754491DA688F400AC2C8D /* Forecast.swift in Sources */,
